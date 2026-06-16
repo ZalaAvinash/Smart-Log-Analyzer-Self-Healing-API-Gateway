@@ -1,0 +1,73 @@
+.App {
+  text-align: left;
+  padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.error-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.error-card {
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 16px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+.error-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.error-header h3 {
+  margin: 0;
+  color: #d73a49;
+}
+
+.timestamp {
+  color: #586069;
+  font-size: 0.9em;
+}
+
+.error-body p {
+  margin: 5px 0;
+}
+
+.ai-analysis {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+  border: 1px solid #e1e4e8;
+}
+
+.ai-analysis h4 {
+  margin-top: 0;
+  color: #0366d6;
+}
+
+.code-pre {
+  background-color: #282c34;
+  color: #abb2bf;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
