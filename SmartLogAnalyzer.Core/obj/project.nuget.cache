@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "dgSpecHash": "eCF2uG31iUw=",
+  "success": true,
+  "projectFilePath": "D:\\Avinash\\Projects\\Smart Log Analyzer & Self-Healing API Gateway\\SmartLogAnalyzer.Core\\SmartLogAnalyzer.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\avinash\\.nuget\\packages\\hangfire\\1.8.23\\hangfire.1.8.23.nupkg.sha512",
+    "C:\\Users\\avinash\\.nuget\\packages\\hangfire.aspnetcore\\1.8.23\\hangfire.aspnetcore.1.8.23.nupkg.sha512",
+    "C:\\Users\\avinash\\.nuget\\packages\\hangfire.core\\1.8.23\\hangfire.core.1.8.23.nupkg.sha512",
+    "C:\\Users\\avinash\\.nuget\\packages\\hangfire.netcore\\1.8.23\\hangfire.netcore.1.8.23.nupkg.sha512",
+    "C:\\Users\\avinash\\.nuget\\packages\\hangfire.sqlserver\\1.8.23\\hangfire.sqlserver.1.8.23.nupkg.sha512",
+    "C:\\Users\\avinash\\.nuget\\packages\\newtonsoft.json\\11.0.1\\newtonsoft.json.11.0.1.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "message": "Package 'Newtonsoft.Json' 11.0.1 has a known high severity vulnerability, https://github.com/advisories/GHSA-5crp-9r3c-p9vr",
+      "projectPath": "D:\\Avinash\\Projects\\Smart Log Analyzer & Self-Healing API Gateway\\SmartLogAnalyzer.Core\\SmartLogAnalyzer.Core.csproj",
+      "warningLevel": 1,
+      "filePath": "D:\\Avinash\\Projects\\Smart Log Analyzer & Self-Healing API Gateway\\SmartLogAnalyzer.Core\\SmartLogAnalyzer.Core.csproj",
+      "libraryId": "Newtonsoft.Json",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
+}

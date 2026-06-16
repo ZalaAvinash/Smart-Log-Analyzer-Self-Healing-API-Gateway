@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="SmartLogAnalyzer.Api/SmartLogAnalyzer.Api.csproj" />
+  <Project Path="SmartLogAnalyzer.Core/SmartLogAnalyzer.Core.csproj" />
+  <Project Path="SmartLogAnalyzer.Infrastructure/SmartLogAnalyzer.Infrastructure.csproj" />
+  <Project Path="SmartLogAnalyzer.Worker/SmartLogAnalyzer.Worker.csproj" />
+</Solution>

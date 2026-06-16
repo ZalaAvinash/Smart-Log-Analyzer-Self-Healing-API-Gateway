@@ -1,0 +1,15 @@
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\bin\Debug\net10.0\SmartLogAnalyzer.Infrastructure.deps.json
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\bin\Debug\net10.0\SmartLogAnalyzer.Infrastructure.dll
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\bin\Debug\net10.0\SmartLogAnalyzer.Infrastructure.pdb
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\bin\Debug\net10.0\SmartLogAnalyzer.Core.dll
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\bin\Debug\net10.0\SmartLogAnalyzer.Core.pdb
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\SmartLogAnalyzer.Infrastructure.csproj.AssemblyReference.cache
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\SmartLogAnalyzer.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\SmartLogAnalyzer.Infrastructure.AssemblyInfoInputs.cache
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\SmartLogAnalyzer.Infrastructure.AssemblyInfo.cs
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\SmartLogAnalyzer.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\SmartLog.1CE769FA.Up2Date
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\SmartLogAnalyzer.Infrastructure.dll
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\refint\SmartLogAnalyzer.Infrastructure.dll
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\SmartLogAnalyzer.Infrastructure.pdb
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\ref\SmartLogAnalyzer.Infrastructure.dll

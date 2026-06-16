@@ -1,0 +1,6 @@
+@SmartLogAnalyzer.Api_HostAddress = http://localhost:5206
+
+GET {{SmartLogAnalyzer.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
