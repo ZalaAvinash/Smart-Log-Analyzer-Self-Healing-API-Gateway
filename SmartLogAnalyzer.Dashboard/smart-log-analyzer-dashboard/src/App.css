@@ -4,14 +4,66 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .App-header {
-  background-color: #282c34;
-  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px 30px;
   color: white;
   margin-bottom: 20px;
-  border-radius: 8px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.connected {
+  background-color: #28a745;
+  box-shadow: 0 0 8px #28a745;
+}
+
+.status-dot.disconnected {
+  background-color: #dc3545;
+  box-shadow: 0 0 8px #dc3545;
+}
+
+.no-errors {
+  text-align: center;
+  padding: 60px 20px;
+  color: #28a745;
+}
+
+.no-errors h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.no-errors code {
+  background: #f4f4f4;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: #333;
 }
 
 .error-list {
@@ -20,12 +72,17 @@
   gap: 16px;
 }
 
+.error-list h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
 .error-card {
   border: 1px solid #e1e4e8;
-  border-radius: 6px;
-  padding: 16px;
+  border-radius: 8px;
+  padding: 20px;
   background-color: #fff;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .error-header {
@@ -33,30 +90,52 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 .error-header h3 {
   margin: 0;
   color: #d73a49;
+  font-size: 1.1rem;
 }
 
 .timestamp {
   color: #586069;
-  font-size: 0.9em;
+  font-size: 0.85em;
 }
 
 .error-body p {
-  margin: 5px 0;
+  margin: 6px 0;
+  color: #333;
+}
+
+details {
+  margin: 10px 0;
+}
+
+summary {
+  cursor: pointer;
+  color: #0366d6;
+  font-weight: 500;
+}
+
+.stack-trace {
+  background: #f6f8fa;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-size: 0.85em;
+  color: #333;
+  margin-top: 8px;
 }
 
 .ai-analysis {
   margin-top: 15px;
   padding: 15px;
-  background-color: #f6f8fa;
-  border-radius: 6px;
-  border: 1px solid #e1e4e8;
+  background-color: #f0f7ff;
+  border-radius: 8px;
+  border: 1px solid #b3d9ff;
 }
 
 .ai-analysis h4 {
@@ -64,10 +143,15 @@
   color: #0366d6;
 }
 
-.code-pre {
+.code-patch {
+  margin-top: 10px;
+}
+
+.code-patch pre {
   background-color: #282c34;
   color: #abb2bf;
-  padding: 10px;
-  border-radius: 4px;
+  padding: 12px;
+  border-radius: 6px;
   overflow-x: auto;
+  font-size: 0.9em;
 }
