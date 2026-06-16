@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SmartLogAnalyzer.Worker")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+acd5fd1396a9c903d1f45d2c07fb3322b0e824e9")]
 [assembly: System.Reflection.AssemblyProductAttribute("SmartLogAnalyzer.Worker")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SmartLogAnalyzer.Worker")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

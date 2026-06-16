@@ -106,3 +106,4 @@ D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyz
 D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Worker\obj\Debug\net10.0\SmartLogAnalyzer.Worker.pdb
 D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Worker\obj\Debug\net10.0\SmartLogAnalyzer.Worker.genruntimeconfig.cache
 D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Worker\obj\Debug\net10.0\ref\SmartLogAnalyzer.Worker.dll
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Worker\obj\Debug\net10.0\SmartLogAnalyzer.Worker.sourcelink.json

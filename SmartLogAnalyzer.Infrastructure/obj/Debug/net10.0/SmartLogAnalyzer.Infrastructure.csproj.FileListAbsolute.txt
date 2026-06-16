@@ -13,3 +13,4 @@ D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyz
 D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\refint\SmartLogAnalyzer.Infrastructure.dll
 D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\SmartLogAnalyzer.Infrastructure.pdb
 D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\ref\SmartLogAnalyzer.Infrastructure.dll
+D:\Avinash\Projects\Smart Log Analyzer & Self-Healing API Gateway\SmartLogAnalyzer.Infrastructure\obj\Debug\net10.0\SmartLogAnalyzer.Infrastructure.sourcelink.json
