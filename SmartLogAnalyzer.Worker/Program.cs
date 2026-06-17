@@ -30,15 +30,14 @@ builder.ConfigureServices((context, services) =>
     services.AddScoped<IErrorLogRepository, ErrorLogRepository>();
     services.AddSingleton<IRedisCacheService, RedisCacheService>();
     
-    // Semantic Kernel
+    // Semantic Kernel - Using Groq (Free API)
     services.AddSingleton<Kernel>(sp =>
     {
-        var deploymentName = context.Configuration["AzureOpenAI:DeploymentName"] ?? "gpt-4o";
-        var endpoint = context.Configuration["AzureOpenAI:Endpoint"] ?? "https://your-resource.openai.azure.com/";
-        var apiKey = context.Configuration["AzureOpenAI:ApiKey"] ?? "your-api-key";
+        var apiKey = context.Configuration["Groq:ApiKey"] ?? "your-groq-api-key";
+        var model = context.Configuration["Groq:Model"] ?? "llama-3.3-70b-versatile";
         
         var kernel = Kernel.CreateBuilder()
-            .AddAzureOpenAIChatCompletion(deploymentName, endpoint, apiKey)
+            .AddOpenAIChatCompletion(modelId: model, apiKey: apiKey, endpoint: new Uri("https://api.groq.com/openai/v1"))
             .Build();
         return kernel;
     });

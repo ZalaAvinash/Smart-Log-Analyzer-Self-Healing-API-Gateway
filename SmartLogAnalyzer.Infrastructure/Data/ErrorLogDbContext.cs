@@ -13,9 +13,26 @@ namespace SmartLogAnalyzer.Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ErrorLog>()
-                .HasIndex(e => e.StackTrace)
-                .IsUnique();
+            modelBuilder.Entity<ErrorLog>(entity =>
+            {
+                entity.Property(e => e.StackTrace)
+                    .HasColumnType("nvarchar(max)");
+
+                entity.Property(e => e.AiRootCause)
+                    .HasColumnType("nvarchar(max)");
+
+                entity.Property(e => e.AiFixSuggestion)
+                    .HasColumnType("nvarchar(max)");
+
+                entity.Property(e => e.AiCodePatch)
+                    .HasColumnType("nvarchar(max)");
+
+                entity.Property(e => e.ErrorMessage)
+                    .HasColumnType("nvarchar(max)");
+
+                entity.Property(e => e.RoutePath)
+                    .HasMaxLength(500);
+            });
         }
     }
 }

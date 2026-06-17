@@ -30,9 +30,9 @@ builder.Services.AddStackExchangeRedisCache(options =>
 builder.Services.AddScoped<IErrorLogRepository, ErrorLogRepository>();
 builder.Services.AddSingleton<IRedisCacheService, RedisCacheService>();
 
-// Hangfire
+// Hangfire (only enqueue jobs, Worker service will process them)
 builder.Services.AddHangfire(config => config.UseRedisStorage(builder.Configuration.GetConnectionString("Redis")));
-builder.Services.AddHangfireServer();
+// Note: HangfireServer is NOT added here - Worker service handles processing
 
 // SignalR
 builder.Services.AddSignalR();
