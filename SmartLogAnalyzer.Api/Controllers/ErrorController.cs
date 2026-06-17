@@ -29,5 +29,24 @@ namespace SmartLogAnalyzer.Api.Controllers
             if (error == null) return NotFound();
             return Ok(error);
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteError(int id)
+        {
+            var error = await _context.ErrorLogs.FindAsync(id);
+            if (error == null) return NotFound(new { message = $"Error with ID {id} not found." });
+            _context.ErrorLogs.Remove(error);
+            await _context.SaveChangesAsync();
+            return Ok(new { message = $"Error {id} deleted successfully." });
+        }
+
+        [HttpDelete("clear")]
+        public async Task<IActionResult> ClearAllErrors()
+        {
+            var allErrors = await _context.ErrorLogs.ToListAsync();
+            _context.ErrorLogs.RemoveRange(allErrors);
+            await _context.SaveChangesAsync();
+            return Ok(new { message = $"{allErrors.Count} errors cleared successfully." });
+        }
     }
 }

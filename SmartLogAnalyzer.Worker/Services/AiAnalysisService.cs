@@ -30,7 +30,17 @@ namespace SmartLogAnalyzer.Worker.Services
 
             try
             {
-                var jsonDoc = JsonDocument.Parse(responseText);
+                // Clean up markdown code blocks if present
+                var cleaned = responseText.Trim();
+                if (cleaned.StartsWith("```json"))
+                    cleaned = cleaned.Substring(7);
+                if (cleaned.StartsWith("```"))
+                    cleaned = cleaned.Substring(3);
+                if (cleaned.EndsWith("```"))
+                    cleaned = cleaned.Substring(0, cleaned.Length - 3);
+                cleaned = cleaned.Trim();
+
+                var jsonDoc = JsonDocument.Parse(cleaned);
                 var root = jsonDoc.RootElement;
 
                 errorLog.AiRootCause = root.GetProperty("RootCause").GetString();
@@ -39,12 +49,57 @@ namespace SmartLogAnalyzer.Worker.Services
             }
             catch
             {
-                errorLog.AiRootCause = "Failed to parse AI response.";
-                errorLog.AiFixSuggestion = responseText;
-                errorLog.AiCodePatch = "N/A";
+                // Try to extract values using regex-like string parsing
+                try
+                {
+                    errorLog.AiRootCause = ExtractJsonValue(responseText, "RootCause");
+                    errorLog.AiFixSuggestion = ExtractJsonValue(responseText, "FixSuggestion");
+                    errorLog.AiCodePatch = ExtractJsonValue(responseText, "CodePatch") ?? "N/A";
+                }
+                catch
+                {
+                    errorLog.AiRootCause = "Failed to parse AI response.";
+                    errorLog.AiFixSuggestion = responseText.Length > 500 ? responseText.Substring(0, 500) + "..." : responseText;
+                    errorLog.AiCodePatch = "N/A";
+                }
             }
 
             return errorLog;
+        }
+
+        private string? ExtractJsonValue(string text, string key)
+        {
+            var pattern = $"\"{key}\"\\s*:\\s*\"";
+            var startIndex = text.IndexOf(pattern, StringComparison.OrdinalIgnoreCase);
+            if (startIndex < 0) return null;
+
+            var valueStart = startIndex + pattern.Length;
+            var endIndex = valueStart;
+            var escaped = false;
+
+            while (endIndex < text.Length)
+            {
+                if (escaped)
+                {
+                    escaped = false;
+                    endIndex++;
+                    continue;
+                }
+                if (text[endIndex] == '\\')
+                {
+                    escaped = true;
+                    endIndex++;
+                    continue;
+                }
+                if (text[endIndex] == '"')
+                    break;
+                endIndex++;
+            }
+
+            if (endIndex >= text.Length) return null;
+
+            var value = text.Substring(valueStart, endIndex - valueStart);
+            return value.Replace("\\n", "\n").Replace("\\\"", "\"").Replace("\\\\", "\\");
         }
     }
 }
