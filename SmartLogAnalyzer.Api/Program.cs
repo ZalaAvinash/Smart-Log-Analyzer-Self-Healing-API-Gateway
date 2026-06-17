@@ -8,6 +8,9 @@ using SmartLogAnalyzer.Infrastructure.Data;
 using SmartLogAnalyzer.Infrastructure.Repositories;
 using SmartLogAnalyzer.Infrastructure.Services;
 
+// Load .env file before anything else
+EnvLoader.Load();
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,14 +18,22 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Database
+// Database - from env with fallback to appsettings
+var dbServer = EnvLoader.Get("DB_SERVER") ?? "(localdb)\\mssqllocaldb";
+var dbName = EnvLoader.Get("DB_NAME") ?? "SmartLogAnalyzerDb";
+var connectionString = $"Server={dbServer};Database={dbName};Trusted_Connection=True;MultipleActiveResultSets=true";
 builder.Services.AddDbContext<ErrorLogDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlServer(connectionString));
 
-// Redis
+// Redis - from env with fallback to appsettings
+var redisHost = EnvLoader.Get("REDIS_HOST") ?? "localhost";
+var redisPort = EnvLoader.Get("REDIS_PORT") ?? "6379";
+var redisPassword = EnvLoader.Get("REDIS_PASSWORD") ?? "";
+var redisConnectionString = $"{redisHost}:{redisPort},password={redisPassword}";
+
 builder.Services.AddStackExchangeRedisCache(options =>
 {
-    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+    options.Configuration = redisConnectionString;
     options.InstanceName = "SmartLogAnalyzer:";
 });
 
@@ -31,18 +42,19 @@ builder.Services.AddScoped<IErrorLogRepository, ErrorLogRepository>();
 builder.Services.AddSingleton<IRedisCacheService, RedisCacheService>();
 
 // Hangfire (only enqueue jobs, Worker service will process them)
-builder.Services.AddHangfire(config => config.UseRedisStorage(builder.Configuration.GetConnectionString("Redis")));
+builder.Services.AddHangfire(config => config.UseRedisStorage(redisConnectionString));
 // Note: HangfireServer is NOT added here - Worker service handles processing
 
 // SignalR
 builder.Services.AddSignalR();
 
 // CORS
+var dashboardPort = EnvLoader.Get("DASHBOARD_PORT") ?? "3000";
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>
     {
-        policy.WithOrigins("http://localhost:3000")
+        policy.WithOrigins($"http://localhost:{dashboardPort}")
               .AllowAnyHeader()
               .AllowAnyMethod()
               .AllowCredentials();

@@ -55,3 +55,9 @@ desktop.ini
 # Secrets
 appsettings.Development.json
 !**/appsettings.Development.json
+
+# Environment variables - NEVER commit
+.env
+.env.local
+.env.*.local
+!.env.example
